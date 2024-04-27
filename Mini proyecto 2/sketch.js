@@ -69,6 +69,7 @@ async function fetchCommits() {
 //utiliza map para extraer los mensajes de los commits
 
 async function extractCommitMessages(commits, numberOfCommits) {
+  console.log("Extrayendo mensajes de los commits...");
   //numberOfCommits es el número de mensajes a procesar
   const commitMessages = commits.map((commit) => commit.commit.message);
 
@@ -93,6 +94,7 @@ async function extractCommitMessages(commits, numberOfCommits) {
 //Función que genera mensajes procesados
 //Utiliza un ciclo for en el que llama a un procesador individual para cada mensaje
 async function processMessages(commit_Messages, numberOfMessages) {
+  console.log("Procesando mensajes...");
   //numberOfMessages es el número de mensajes a procesar
   for (let i = 0; i < Math.min(numberOfMessages, commit_Messages.length); i++) {
     const message = commit_Messages[i];
